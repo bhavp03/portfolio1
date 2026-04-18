@@ -10,8 +10,8 @@ export function HeroSection() {
   return (
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 overflow-hidden">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          <div className="w-full md:w-1/2 space-y-6">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-16">
+          <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
             <div>
               <AnimatedText text="Bhavya Puri" className="text-4xl md:text-5xl font-bold tracking-tight" />
               <AnimatedText
@@ -29,7 +29,7 @@ export function HeroSection() {
               EV Enthusiast with expertise in Embedded Systems, Signal Processing, IoT, and AI/ML. Passionate about Electrification, Software Intelligence, and Future Mobility.
             </ClientMotion>
             <ClientMotion
-              className="flex flex-wrap gap-4"
+              className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
@@ -55,7 +55,7 @@ export function HeroSection() {
               </Button>
             </ClientMotion>
             <ClientMotion
-              className="flex gap-4 pt-2"
+              className="flex justify-center md:justify-start gap-4 pt-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
@@ -99,7 +99,7 @@ export function HeroSection() {
               stiffness: 100,
             }}
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
               <Image src="/images/profile.jpg" alt="Bhavya Puri" fill className="object-cover" priority />
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-blue-500/20 mix-blend-overlay" />
             </div>

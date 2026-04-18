@@ -7,8 +7,8 @@ import nodemailer from "nodemailer"
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  subject: z.string().min(2, { message: "Subject must be at least 2 characters." }),
+  message: z.string().min(2, { message: "Message must be at least 2 characters." }),
 })
 
 type FormData = z.infer<typeof formSchema>
@@ -36,7 +36,7 @@ export async function sendContactEmail(formData: FormData) {
     // Email content
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "pitafimurad99@gmail.com", // Your email address
+      to: process.env.RECEIVER_EMAIL || "bhavyapuri@outlook.com", // Your email address
       subject: `Portfolio Contact: ${subject}`,
       text: `
         Name: ${name}

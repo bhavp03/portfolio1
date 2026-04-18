@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Github, Linkedin, Mail, ExternalLink, ChevronRight } from 'lucide-react'
+import { Github, Linkedin, Mail, ExternalLink, ChevronRight, Phone } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -95,7 +95,7 @@ export default function Home() {
 
           <div className="space-y-8">
             <AnimatedSection delay={0.2}>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-l-4 border-blue-600 hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 sm:p-6 border-l-4 border-blue-600 hover:-translate-y-1 transition-transform duration-300">
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
                   <div className="flex items-center gap-4 mb-2 md:mb-0">
                     <div className="w-14 h-14 rounded-lg bg-white flex items-center justify-center shrink-0 shadow-sm border border-gray-100 overflow-hidden">
@@ -123,11 +123,11 @@ export default function Home() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-l-4 border-blue-600 hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 sm:p-6 border-l-4 border-blue-600 hover:-translate-y-1 transition-transform duration-300">
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
                   <div className="flex items-center gap-4 mb-2 md:mb-0">
                     <div className="w-14 h-14 rounded-lg bg-white flex items-center justify-center shrink-0 shadow-sm border border-gray-100 overflow-hidden">
-                      <img src="https://www.google.com/s2/favicons?domain=advik.co.in&sz=128" alt="Advik Hi-Tech Logo" className="w-full h-full object-contain p-1.5" />
+                      <img src="/images/Advik.png" alt="Advik Hi-Tech Logo" className="w-full h-full object-contain p-1.5" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold">Project Trainee</h3>
@@ -145,7 +145,7 @@ export default function Home() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.4}>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-l-4 border-blue-600 hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 sm:p-6 border-l-4 border-blue-600 hover:-translate-y-1 transition-transform duration-300">
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
                   <div className="flex items-center gap-4 mb-2 md:mb-0">
                     <div className="w-14 h-14 rounded-lg bg-white flex items-center justify-center shrink-0 shadow-sm border border-gray-100 overflow-hidden">
@@ -362,7 +362,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
                       Embedded Systems
                     </Badge>
@@ -397,7 +397,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
                       Python
                     </Badge>
@@ -428,7 +428,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-green-100 dark:hover:bg-green-900/50 transition-colors">
                       Git
                     </Badge>
@@ -466,7 +466,7 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-orange-100 dark:hover:bg-orange-900/50 transition-colors">
                       Time Management
                     </Badge>
@@ -638,7 +638,7 @@ export default function Home() {
                     </a>
                   </div>
                   <div className="flex items-center hover:translate-x-1 transition-transform duration-300">
-                    <ExternalLink className="w-5 h-5 text-blue-900 dark:text-white mr-3" />
+                    <Phone className="w-5 h-5 text-blue-900 dark:text-white mr-3" />
                     <a
                       href="tel:+919810928739"
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-white transition-colors"
@@ -691,7 +691,7 @@ export default function Home() {
                 href="tel:+919810928739"
                 className="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-300"
               >
-                <ExternalLink className="w-5 h-5" />
+                <Phone className="w-5 h-5" />
               </Link>
               <Link
                 href="mailto:bhavyapuri@outlook.com"
