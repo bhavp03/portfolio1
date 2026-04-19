@@ -87,12 +87,13 @@ function BlogEditorInner() {
         })
       }
 
+      const result = await res.json()
+
       if (!res.ok) {
-        const err = await res.json()
-        throw new Error(err.error || 'Save failed')
+        throw new Error(result.error || 'Save failed')
       }
 
-      const saved = await res.json()
+      const saved = result
       setPostId(saved.id)
       setPostSlug(saved.slug)
       setSaveStatus('saved')
