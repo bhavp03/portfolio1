@@ -9,6 +9,7 @@ import { Navbar } from "@/components/navbar"
 import { ScrollIndicator } from "@/components/scroll-indicator"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import { HeroSection } from "@/components/hero-section"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import { 
   AnimatedSection, 
   AnimatedCard, 
@@ -24,6 +25,7 @@ export default function Home() {
       <ParticleBackground />
       <ScrollIndicator />
       <SmoothScroll />
+      <ScrollToTop />
 
       {/* Navigation */}
       <Navbar />
