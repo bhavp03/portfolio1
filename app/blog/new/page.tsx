@@ -120,8 +120,9 @@ function BlogEditorInner() {
 
   const shareLinkedIn = () => {
     if (!postSlug) { alert('Save or publish the post first!'); return }
-    const url = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(keywords || '')}`
-    window.open(url, '_blank', 'width=600,height=600')
+    // Opens LinkedIn post composer with blog URL pre-filled in the body
+    const url = `https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(shareUrl)}`
+    window.open(url, '_blank', 'width=700,height=600')
   }
 
   const shareX = () => {

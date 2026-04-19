@@ -34,7 +34,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bhavyapuri.netlify.app'
   const postUrl = `${siteUrl}/blog/${post.slug}`
-  const linkedInUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postUrl)}&title=${encodeURIComponent(post.title)}&summary=${encodeURIComponent(post.excerpt || '')}`
+  const linkedInUrl = `https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(postUrl)}`
   const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${post.title} ${postUrl}`)}`
 
   return (
