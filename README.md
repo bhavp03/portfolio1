@@ -1,6 +1,6 @@
 # 🚀 Professional Portfolio & Advanced Blog System
 
-A high-performance, modern web application built for a **Vehicle Controls Engineer**, featuring a dynamic blog engine, real-time engagement tools, and a premium administrative dashboard.
+A high-performance, modern web application built for an **Engineer**, featuring a dynamic blog engine, real-time engagement tools, and a premium administrative dashboard.
 
 ## 🌟 Key Features
 
