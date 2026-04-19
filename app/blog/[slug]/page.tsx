@@ -3,9 +3,12 @@ import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 import { formatDate } from '@/lib/blog-utils'
 import { Navbar } from '@/components/navbar'
-import { Clock, Calendar, Tag, ArrowLeft, Edit3, Linkedin, Share2 } from 'lucide-react'
+import { Clock, Calendar, Tag, ArrowLeft, Edit3, Linkedin, Share2, Heart } from 'lucide-react'
 import '@/styles/editor.css'
 import type { Metadata } from 'next'
+import { CopyLinkButton } from '@/components/blog/copy-link-button'
+import { LikeButton } from '@/components/blog/like-button'
+import { CommentSection } from '@/components/blog/comment-section'
 
 interface Props {
   params: { slug: string }
@@ -85,9 +88,12 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6 tracking-tight">
-            {post.title}
-          </h1>
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight">
+              {post.title}
+            </h1>
+            <CopyLinkButton url={postUrl} />
+          </div>
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
@@ -128,7 +134,8 @@ export default async function BlogPostPage({ params }: Props) {
                 <Share2 className="w-4 h-4" />
                 Share this article:
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
+                <LikeButton postId={post.id} initialLikes={post.likes || 0} />
                 <a
                   href={linkedInUrl}
                   target="_blank"
@@ -154,6 +161,9 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             </div>
           </div>
+
+          {/* Comment Section */}
+          <CommentSection postId={post.id} />
         </article>
       </main>
     </>
