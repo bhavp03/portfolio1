@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { cookies } from 'next/headers'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 import { formatDate } from '@/lib/blog-utils'
@@ -9,6 +10,7 @@ import type { Metadata } from 'next'
 import { CopyLinkButton } from '@/components/blog/copy-link-button'
 import { LikeButton } from '@/components/blog/like-button'
 import { CommentSection } from '@/components/blog/comment-section'
+import { DeletePostButton } from '@/components/blog/delete-post-button'
 
 interface Props {
   params: { slug: string }
@@ -35,6 +37,9 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (error || !post) notFound()
 
+  const cookieStore = cookies()
+  const isAdmin = cookieStore.get('blog_admin')?.value === process.env.ADMIN_SECRET
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bhavyapuri.netlify.app'
   const postUrl = `${siteUrl}/blog/${post.slug}`
   const linkedInUrl = `https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(postUrl)}`
@@ -54,13 +59,18 @@ export default async function BlogPostPage({ params }: Props) {
               <ArrowLeft className="w-4 h-4" />
               Back to Blog
             </Link>
-            <Link
-              href={`/blog/new?id=${post.id}`}
-              className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
-            >
-              <Edit3 className="w-3.5 h-3.5" />
-              Edit
-            </Link>
+            <div className="flex items-center gap-4">
+              {isAdmin && (
+                <DeletePostButton postId={post.id} />
+              )}
+              <Link
+                href={`/blog/new?id=${post.id}`}
+                className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+              >
+                <Edit3 className="w-3.5 h-3.5" />
+                Edit
+              </Link>
+            </div>
           </div>
         </div>
 

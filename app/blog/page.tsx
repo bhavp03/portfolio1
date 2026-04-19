@@ -13,12 +13,20 @@ export default function BlogPage() {
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
   const [activeTag, setActiveTag] = useState<string | null>(null)
+  const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
+    // Fetch posts
     fetch('/api/blog')
       .then(r => r.json())
       .then(data => { setPosts(Array.isArray(data) ? data : []); setLoading(false) })
       .catch(() => setLoading(false))
+
+    // Check admin status
+    fetch('/api/admin/check')
+      .then(r => r.json())
+      .then(data => setIsAdmin(data.isAdmin))
+      .catch(() => setIsAdmin(false))
   }, [])
 
   // Collect all unique tags
@@ -162,7 +170,7 @@ export default function BlogPage() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((post, i) => (
-                <BlogCard key={post.id} post={post} index={i} />
+                <BlogCard key={post.id} post={post} index={i} isAdmin={isAdmin} />
               ))}
             </div>
           )}

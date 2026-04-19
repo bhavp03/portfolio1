@@ -1,15 +1,17 @@
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowRight } from 'lucide-react'
 import { formatDate } from '@/lib/blog-utils'
+import { DeletePostButton } from './delete-post-button'
 import { motion } from 'framer-motion'
 import type { BlogPost } from '@/lib/supabase'
 
 interface BlogCardProps {
   post: BlogPost
   index: number
+  isAdmin?: boolean
 }
 
-export function BlogCard({ post, index }: BlogCardProps) {
+export function BlogCard({ post, index, isAdmin = false }: BlogCardProps) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
@@ -71,10 +73,15 @@ export function BlogCard({ post, index }: BlogCardProps) {
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700/50">
-          <span className="flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
-            <Calendar className="w-3 h-3" />
-            {formatDate(post.created_at)}
-          </span>
+          <div className="flex flex-col">
+            <span className="flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
+              <Calendar className="w-3 h-3" />
+              {formatDate(post.created_at)}
+            </span>
+            {isAdmin && (
+              <DeletePostButton postId={post.id} className="mt-1 -ml-3 scale-90" showText={false} />
+            )}
+          </div>
           <Link
             href={`/blog/${post.slug}`}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-700 dark:text-blue-400 hover:gap-2.5 transition-all duration-200"
