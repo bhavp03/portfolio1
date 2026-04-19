@@ -7,6 +7,7 @@ import { Loader2, Save, Send, Linkedin, Twitter, ArrowLeft, CheckCircle, LogOut 
 import dynamic from 'next/dynamic'
 import { TagInput } from '@/components/blog/tag-input'
 import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
 
 // TipTap must be client-only (no SSR)
 const RichEditor = dynamic(() => import('@/components/blog/rich-editor').then(m => m.RichEditor), {
@@ -319,6 +320,7 @@ function BlogEditorInner() {
           )}
         </div>
       </main>
+      <Footer />
     </>
   )
 }

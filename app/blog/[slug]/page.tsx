@@ -11,6 +11,7 @@ import { CopyLinkButton } from '@/components/blog/copy-link-button'
 import { LikeButton } from '@/components/blog/like-button'
 import { CommentSection } from '@/components/blog/comment-section'
 import { DeletePostButton } from '@/components/blog/delete-post-button'
+import { Footer } from '@/components/footer'
 
 interface Props {
   params: { slug: string }
@@ -176,6 +177,7 @@ export default async function BlogPostPage({ params }: Props) {
           <CommentSection postId={post.id} />
         </article>
       </main>
+      <Footer />
     </>
   )
 }

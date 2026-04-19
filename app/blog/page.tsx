@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { PenSquare, Tag, Search, Loader2, BookOpen } from 'lucide-react'
 import { BlogCard } from '@/components/blog/blog-card'
 import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
 import type { BlogPost } from '@/lib/supabase'
 
 export default function BlogPage() {
@@ -176,6 +177,7 @@ export default function BlogPage() {
           )}
         </section>
       </main>
+      <Footer />
     </>
   )
 }
