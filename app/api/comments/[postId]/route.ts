@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(_: NextRequest, { params }: { params: { postId: string } }) {
   // Fetch top-level comments
   const { data: comments, error } = await supabase

@@ -3,6 +3,8 @@ import { cookies } from 'next/headers'
 import { supabase } from '@/lib/supabase'
 import { generateSlug, generateExcerpt, calculateReadTime } from '@/lib/blog-utils'
 
+export const dynamic = 'force-dynamic'
+
 function isAdmin(): boolean {
   const cookieStore = cookies()
   return cookieStore.get('blog_admin')?.value === process.env.ADMIN_SECRET
