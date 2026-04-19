@@ -1,30 +1,55 @@
-# Professional portfolio website
+# 🚀 Professional Portfolio & Advanced Blog System
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+A high-performance, modern web application built for a **Vehicle Controls Engineer**, featuring a dynamic blog engine, real-time engagement tools, and a premium administrative dashboard.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/k213064-nuedupks-projects/v0-professional-portfolio-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/sw4x0VzL0Sm)
+## 🌟 Key Features
 
-## Overview
+### 🏢 Professional Portfolio
+- **Dynamic Hero Section**: Interactive branding with particle effects and smooth scroll capabilities.
+- **Experience Timeline**: Detailed professional history with company branding and achievement highlights.
+- **Project Showcase**: Visual grid of featured engineering projects with direct GitHub integration.
+- **Interactive Skills Matrix**: Animated skill tags and domain expertise badges.
+- **Smart Contact System**: Integrated contact form with automated email delivery via Nodemailer.
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+### ✍️ Advanced Blog Engine
+- **Admin Dashboard**: Secure login system (`/blog/login`) with session persistence.
+- **Full-Featured Editor**: Custom TipTap integration supporting formatting, images, and YouTube embeds.
+- **Draft & Publish Workflow**: Full control over post visibility and content management.
+- **Instant Management**: Direct "Edit" and "Delete" actions available for administrators across the site.
+- **SEO Optimized**: Dynamic metadata generation for titles, keywords, and excerpts for every post.
 
-## Deployment
+### 💬 Engagement & Sharing
+- **Interactive Like System**: Real-time engagement counter for readers.
+- **Threaded Comments**: Optimized discussion system allowing user comments and admin replies.
+- **Social Integration**: 
+  - Direct share to **LinkedIn** and **X (Twitter)**.
+  - "Copy Link" utility for quick sharing.
+  - Consistent shared footer with your professional profiles on every page.
 
-Your project is live at:
+## 🛠️ Technical Architecture
 
-**[https://vercel.com/k213064-nuedupks-projects/v0-professional-portfolio-website](https://vercel.com/k213064-nuedupks-projects/v0-professional-portfolio-website)**
+| Category | Technology |
+| :--- | :--- |
+| **Framework** | Next.js 14 (App Router) |
+| **Database** | Supabase (PostgreSQL) |
+| **Authentication** | Custom Session-based Admin Auth |
+| **Styling** | Tailwind CSS + Framer Motion |
+| **Animations** | Framer Motion (Scroll, Hover, Layout transitions) |
+| **Icons** | Lucide React |
+| **Database ORM** | Supabase-js |
+| **Editor** | TipTap Rich Text Editor |
+| **Email** | Nodemailer |
 
-## Build your app
+## 📐 Design Philosophy
+- **Rich Aesthetics**: Premium dark/light mode support using `next-themes`.
+- **Micro-Animations**: Subtle hover effects and scroll-triggered transitions for a premium feel.
+- **Glassmorphism**: Modern UI elements with backdrop blurs and subtle gradients.
+- **Performance**: Static generation where possible, with `force-dynamic` API routes to ensure real-time data accuracy.
 
-Continue building your app on:
+---
 
-**[https://v0.dev/chat/projects/sw4x0VzL0Sm](https://v0.dev/chat/projects/sw4x0VzL0Sm)**
+> [!NOTE]
+> This repository is fully configured for automated deployment via **Netlify**, with seamless integration between the manual content management systems and the live database.
 
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+> [!TIP]
+> To maintain the site, ensure your `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and `ADMIN_SECRET` are always up to date in your deployment settings.
