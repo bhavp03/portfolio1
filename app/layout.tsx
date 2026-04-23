@@ -11,9 +11,12 @@ export const metadata: Metadata = {
   title: "Bhavya Puri",
   description:
     "Portfolio of Bhavya Puri, Vehicle Controls Engineer specializing in Embedded Systems, Signal Processing, IoT, and AI/ML",
-  generator: 'v0.dev',
+  generator: "v0.dev",
   icons: {
-    icon: "/icon.png",
+    icon: [
+      { url: "/icon-light.png", media: "(prefers-color-scheme: light)" },
+      { url: "/icon-dark.png", media: "(prefers-color-scheme: dark)" },
+    ],
   },
 }
 
@@ -25,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
           <Toaster />
         </ThemeProvider>
