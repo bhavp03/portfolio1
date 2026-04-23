@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Github, Linkedin, Mail, Phone, Download, ArrowDown } from 'lucide-react'
+import { Github, Linkedin, Mail, Phone, Download, ArrowDown, BookOpen } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { AnimatedText, ClientMotion } from "@/components/client-animations"
 
@@ -38,6 +38,13 @@ export function HeroSection() {
                 <Link href="#contact">
                   <span className="relative z-10">Get in Touch</span>
                   <span className="absolute inset-0 bg-white dark:bg-gray-800 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+                </Link>
+              </Button>
+              <Button variant="outline" asChild className="relative overflow-hidden group border-blue-900 dark:border-white text-blue-900 dark:text-white hover:bg-blue-50 dark:hover:bg-blue-900/10">
+                <Link href="/blog">
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  <span className="relative z-10">Go to Blog</span>
+                  <span className="absolute inset-0 bg-blue-900 dark:bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                 </Link>
               </Button>
               <Button variant="outline" asChild className="relative overflow-hidden group">
