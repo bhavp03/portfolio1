@@ -183,16 +183,22 @@
 }
 
 /* Dark mode overrides for body text */
-.dark .prose-view {
-  color: #f3f4f6 !important; /* gray-100 */
+.prose-view, .prose-view p, .prose-view span, .prose-view div {
+  color: #1f2937; /* gray-800 default */
 }
 
+.dark .prose-view,
 .dark .prose-view p,
 .dark .prose-view span,
 .dark .prose-view li,
 .dark .prose-view strong,
-.dark .prose-view em {
-  color: #f3f4f6 !important;
+.dark .prose-view em,
+.dark .prose-view div,
+.dark .prose-view h1,
+.dark .prose-view h2,
+.dark .prose-view h3,
+.dark .prose-view h4 {
+  color: #f3f4f6 !important; /* gray-100 */
 }
 
 .dark .prose-view a {

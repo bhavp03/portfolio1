@@ -134,7 +134,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body */}
           <div
-            className="prose-view text-gray-800 dark:text-gray-100"
+            className="prose-view"
             dangerouslySetInnerHTML={{ __html: post.body || '<p>This post has no content yet.</p>' }}
           />
 
