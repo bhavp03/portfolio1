@@ -109,7 +109,7 @@ export function HeroSection() {
             }}
           >
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
-              <Image src="/images/profile.jpg" alt="Bhavya Puri" fill className="object-cover" priority />
+              <Image src="/images/IMG_9939.JPG" alt="Bhavya Puri" fill className="object-cover" priority />
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-blue-500/20 mix-blend-overlay" />
             </div>
           </ClientMotion>
