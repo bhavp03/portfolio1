@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   title: "Bhavya Puri",
   description:
     "Portfolio of Bhavya Puri, Vehicle Controls Engineer specializing in Embedded Systems, Signal Processing, IoT, and AI/ML",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: "/icon.png",
+  },
 }
 
 export default function RootLayout({
