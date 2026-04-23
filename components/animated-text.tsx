@@ -58,7 +58,11 @@ export function AnimatedText({ text, className = "", once = false }: AnimatedTex
       viewport={{ once }}
     >
       {words.map((word, index) => (
-        <motion.span key={index} className="inline-block mr-1" variants={child}>
+        <motion.span 
+          key={index} 
+          className={`inline-block ${index === words.length - 1 ? "" : "mr-2"}`} 
+          variants={child}
+        >
           {word}
         </motion.span>
       ))}
