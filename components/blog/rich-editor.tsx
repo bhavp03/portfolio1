@@ -5,6 +5,7 @@ import StarterKit from '@tiptap/starter-kit'
 import { Link as LinkExtension } from '@tiptap/extension-link'
 import { Image as ImageExtension } from '@tiptap/extension-image'
 import { Youtube } from '@tiptap/extension-youtube'
+import { Video } from '@/lib/tiptap-video'
 import { TextAlign } from '@tiptap/extension-text-align'
 import { Underline } from '@tiptap/extension-underline'
 import { Placeholder } from '@tiptap/extension-placeholder'
@@ -12,13 +13,13 @@ import { Highlight } from '@tiptap/extension-highlight'
 import { TextStyle } from '@tiptap/extension-text-style'
 import { Color } from '@tiptap/extension-color'
 import { Typography } from '@tiptap/extension-typography'
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import {
   Bold, Italic, Underline as UnderlineIcon, Strikethrough, Highlighter,
   AlignLeft, AlignCenter, AlignRight, AlignJustify,
   List, ListOrdered, Quote, Code, Code2,
   Link as LinkIcon, Image as ImageIcon, Youtube as YoutubeIcon,
-  Undo, Redo, Minus, Type, ChevronDown, Unlink, X
+  Undo, Redo, Minus, Type, ChevronDown, Unlink, X, Upload, Loader2
 } from 'lucide-react'
 import '@/styles/editor.css'
 
@@ -83,6 +84,8 @@ export function RichEditor({ content = '', onChange, placeholder = 'Start writin
   const [linkText, setLinkText] = useState('')
   const [imageUrl, setImageUrl] = useState('')
   const [youtubeUrl, setYoutubeUrl] = useState('')
+  const [isUploading, setIsUploading] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const editor = useEditor({
     immediatelyRender: false,
@@ -98,6 +101,7 @@ export function RichEditor({ content = '', onChange, placeholder = 'Start writin
       LinkExtension.configure({ openOnClick: false, autolink: true, linkOnPaste: true }),
       ImageExtension.configure({ allowBase64: false, inline: false }),
       Youtube.configure({ width: 640, height: 360, nocookie: true }),
+      Video.configure({ allowBase64: false }),
     ],
     content,
     editorProps: {
@@ -154,6 +158,39 @@ export function RichEditor({ content = '', onChange, placeholder = 'Start writin
     editor.commands.setYoutubeVideo({ src: youtubeUrl })
     closeDialog()
   }, [editor, youtubeUrl, closeDialog])
+
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (!file || !editor) return
+
+    setIsUploading(true)
+    const formData = new FormData()
+    formData.append('file', file)
+
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (!res.ok) throw new Error('Upload failed')
+
+      const { url } = await res.json()
+
+      if (file.type.startsWith('image/')) {
+        editor.chain().focus().setImage({ src: url }).run()
+      } else if (file.type.startsWith('video/')) {
+        editor.chain().focus().setVideo({ src: url }).run()
+      }
+      closeDialog()
+    } catch (error) {
+      console.error('Error uploading file:', error)
+      alert('Failed to upload media. Please try again.')
+    } finally {
+      setIsUploading(false)
+      if (fileInputRef.current) fileInputRef.current.value = ''
+    }
+  }
 
   if (!editor) return null
 
@@ -339,30 +376,64 @@ export function RichEditor({ content = '', onChange, placeholder = 'Start writin
                 <button type="button" onClick={applyImage} className="py-1.5 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors font-medium">
                   Insert Image
                 </button>
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t border-gray-200 dark:border-gray-700" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-white dark:bg-gray-800 px-2 text-gray-500">Or</span>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  disabled={isUploading}
+                  onClick={() => fileInputRef.current?.click()}
+                  className="flex items-center justify-center gap-2 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 text-sm rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-medium"
+                >
+                  {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+                  Browse Files
+                </button>
               </div>
             </InlineDialog>
           )}
         </div>
 
-        {/* Insert: YouTube */}
+        {/* Insert: Video */}
         <div className="relative">
-          <ToolBtn onClick={() => openDialog('youtube')} title="Embed YouTube video">
+          <ToolBtn onClick={() => openDialog('youtube')} title="Insert video (Library / YouTube)">
             <YoutubeIcon className="w-4 h-4" />
           </ToolBtn>
           {dialog === 'youtube' && (
-            <InlineDialog title="Embed YouTube Video" onClose={closeDialog}>
+            <InlineDialog title="Insert Video" onClose={closeDialog}>
               <div className="flex flex-col gap-2">
                 <input
                   autoFocus
                   type="url"
-                  placeholder="https://www.youtube.com/watch?v=..."
+                  placeholder="Paste YouTube URL..."
                   value={youtubeUrl}
                   onChange={e => setYoutubeUrl(e.target.value)}
                   onKeyDown={e => e.key === 'Enter' && applyYoutube()}
                   className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <button type="button" onClick={applyYoutube} className="py-1.5 bg-red-600 text-white text-sm rounded-lg hover:bg-red-700 transition-colors font-medium">
-                  Embed Video
+                  Embed YouTube
+                </button>
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t border-gray-200 dark:border-gray-700" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-white dark:bg-gray-800 px-2 text-gray-500">Or</span>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  disabled={isUploading}
+                  onClick={() => fileInputRef.current?.click()}
+                  className="flex items-center justify-center gap-2 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 text-sm rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-medium"
+                >
+                  {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+                  Browse Videos
                 </button>
               </div>
             </InlineDialog>
@@ -378,6 +449,15 @@ export function RichEditor({ content = '', onChange, placeholder = 'Start writin
         <ToolBtn onClick={() => editor.chain().focus().redo().run()} disabled={!editor.can().redo()} title="Redo (Ctrl+Y)">
           <Redo className="w-4 h-4" />
         </ToolBtn>
+
+        {/* Hidden File Input for browsing */}
+        <input
+          type="file"
+          ref={fileInputRef}
+          onChange={handleFileUpload}
+          accept="image/*,video/*"
+          className="hidden"
+        />
       </div>
 
       {/* ── Editor content area ── */}
