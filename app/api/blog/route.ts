@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { supabase } from '@/lib/supabase'
 import { generateSlug, generateExcerpt, calculateReadTime } from '@/lib/blog-utils'
+import { revalidatePath } from 'next/cache'
 
 export const dynamic = 'force-dynamic'
 
@@ -60,6 +61,11 @@ export async function POST(request: NextRequest) {
       console.error('Supabase insert error:', error)
       return NextResponse.json({ error: error.message, details: error }, { status: 500 })
     }
+
+    // Purge cache for blog list and the new post page
+    revalidatePath('/blog')
+    revalidatePath(`/blog/${data.slug}`)
+
     return NextResponse.json(data, { status: 201 })
   } catch (err: any) {
     return NextResponse.json({ error: err.message || 'Unknown error occurred' }, { status: 500 })

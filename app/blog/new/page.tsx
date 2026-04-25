@@ -35,6 +35,7 @@ function BlogEditorInner() {
   const [postId, setPostId] = useState<string | null>(null)
   const [postSlug, setPostSlug] = useState<string | null>(null)
   const [loading, setLoading] = useState(!!editId)
+  const [isUploading, setIsUploading] = useState(false)
 
   // Load existing post if editing
   useEffect(() => {
@@ -180,8 +181,9 @@ function BlogEditorInner() {
                   )}
                   <button
                     onClick={handleLogout}
+                    disabled={isUploading}
                     title="Logout"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     Logout
@@ -240,6 +242,7 @@ function BlogEditorInner() {
                 <RichEditor
                   content={body}
                   onChange={setBody}
+                  onUploading={setIsUploading}
                   placeholder="Start writing your blog post…"
                 />
               </div>
@@ -249,8 +252,8 @@ function BlogEditorInner() {
                 <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl border border-gray-200 dark:border-gray-700 shadow-2xl px-5 py-4 flex flex-wrap gap-3 items-center justify-between">
                   {/* Save status indicator */}
                   <div className="flex items-center gap-2 text-sm">
-                    {saveStatus === 'saving' && (
-                      <><Loader2 className="w-4 h-4 text-blue-500 animate-spin" /><span className="text-gray-500">Saving…</span></>
+                    {(saveStatus === 'saving' || isUploading) && (
+                      <><Loader2 className="w-4 h-4 text-blue-500 animate-spin" /><span className="text-gray-500">{isUploading ? 'Uploading media…' : 'Saving…'}</span></>
                     )}
                     {saveStatus === 'saved' && (
                       <><CheckCircle className="w-4 h-4 text-green-500" /><span className="text-green-600 dark:text-green-400">Saved!</span></>
@@ -266,7 +269,7 @@ function BlogEditorInner() {
                     <button
                       id="btn-save-draft"
                       onClick={handleDraft}
-                      disabled={saveStatus === 'saving'}
+                      disabled={saveStatus === 'saving' || isUploading}
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 border-blue-700 text-blue-700 dark:text-blue-400 dark:border-blue-500 font-semibold text-sm hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all disabled:opacity-50"
                     >
                       <Save className="w-4 h-4" />
@@ -277,7 +280,7 @@ function BlogEditorInner() {
                     <button
                       id="btn-publish"
                       onClick={handlePublish}
-                      disabled={saveStatus === 'saving'}
+                      disabled={saveStatus === 'saving' || isUploading}
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm shadow-md shadow-blue-200 dark:shadow-blue-900/40 transition-all disabled:opacity-50"
                     >
                       <Send className="w-4 h-4" />

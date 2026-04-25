@@ -75,10 +75,11 @@ function InlineDialog({
 interface RichEditorProps {
   content?: string
   onChange?: (html: string) => void
+  onUploading?: (uploading: boolean) => void
   placeholder?: string
 }
 
-export function RichEditor({ content = '', onChange, placeholder = 'Start writing your blog post…' }: RichEditorProps) {
+export function RichEditor({ content = '', onChange, onUploading, placeholder = 'Start writing your blog post…' }: RichEditorProps) {
   const [dialog, setDialog] = useState<null | 'link' | 'image' | 'youtube'>(null)
   const [linkUrl, setLinkUrl] = useState('')
   const [linkText, setLinkText] = useState('')
@@ -164,6 +165,7 @@ export function RichEditor({ content = '', onChange, placeholder = 'Start writin
     if (!file || !editor) return
 
     setIsUploading(true)
+    onUploading?.(true)
     const formData = new FormData()
     formData.append('file', file)
 
@@ -192,6 +194,7 @@ export function RichEditor({ content = '', onChange, placeholder = 'Start writin
       alert(`Failed to upload media: ${error.message || 'Unknown error'}`)
     } finally {
       setIsUploading(false)
+      onUploading?.(false)
       if (fileInputRef.current) fileInputRef.current.value = ''
     }
   }

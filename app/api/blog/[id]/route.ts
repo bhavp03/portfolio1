@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { supabase } from '@/lib/supabase'
 import { generateExcerpt, calculateReadTime } from '@/lib/blog-utils'
+import { revalidatePath } from 'next/cache'
 
 export const dynamic = 'force-dynamic'
 
@@ -52,6 +53,11 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       .single()
 
     if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+
+    // Purge cache for blog list and the updated post page
+    revalidatePath('/blog')
+    revalidatePath(`/blog/${data.slug}`)
+
     return NextResponse.json(data)
   } catch (err: any) {
     return NextResponse.json({ error: err.message || 'Unknown error occurred' }, { status: 500 })
@@ -68,6 +74,10 @@ export async function DELETE(_: NextRequest, { params }: { params: { id: string 
       .eq('id', params.id)
 
     if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+
+    // Purge cache for blog list
+    revalidatePath('/blog')
+
     return NextResponse.json({ success: true })
   } catch (err: any) {
     return NextResponse.json({ error: err.message || 'Unknown error occurred' }, { status: 500 })
