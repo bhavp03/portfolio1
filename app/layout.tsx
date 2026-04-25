@@ -30,6 +30,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <Script
+          data-cfasync="false"
+          src="https://cache.consentframework.com/js/pa/51305/c/Ua2Y8/stub?source=google-tag"
+          strategy="beforeInteractive"
+        />
+        <Script
+          data-cfasync="false"
+          src="https://choices.consentframework.com/js/pa/51305/c/Ua2Y8/cmp?source=google-tag"
+          strategy="afterInteractive"
+        />
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-2RGQ4BQ5K3"
           strategy="afterInteractive"
         />
