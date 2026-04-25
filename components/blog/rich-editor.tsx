@@ -173,9 +173,13 @@ export function RichEditor({ content = '', onChange, placeholder = 'Start writin
         body: formData,
       })
 
-      if (!res.ok) throw new Error('Upload failed')
+      const result = await res.json()
 
-      const { url } = await res.json()
+      if (!res.ok) {
+        throw new Error(result.error || 'Upload failed')
+      }
+
+      const { url } = result
 
       if (file.type.startsWith('image/')) {
         editor.chain().focus().setImage({ src: url }).run()
@@ -183,9 +187,9 @@ export function RichEditor({ content = '', onChange, placeholder = 'Start writin
         editor.chain().focus().setVideo({ src: url }).run()
       }
       closeDialog()
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error uploading file:', error)
-      alert('Failed to upload media. Please try again.')
+      alert(`Failed to upload media: ${error.message || 'Unknown error'}`)
     } finally {
       setIsUploading(false)
       if (fileInputRef.current) fileInputRef.current.value = ''
