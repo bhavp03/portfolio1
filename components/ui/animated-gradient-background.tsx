@@ -34,7 +34,7 @@ export function AnimatedGradientBackground() {
         radius: Math.random() * 300 + 100,
         vx: Math.random() * 0.2 - 0.1,
         vy: Math.random() * 0.2 - 0.1,
-        color: i % 2 === 0 ? "rgba(37, 99, 235, 0.07)" : "rgba(79, 70, 229, 0.07)", // Blue and indigo with low opacity
+        color: i % 2 === 0 ? "rgba(219, 6, 31, 0.08)" : "rgba(244, 122, 58, 0.08)", // Lumax red and orange
       })
     }
 

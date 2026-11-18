@@ -37,9 +37,9 @@ export function ParticleBackground() {
         radius: Math.random() * 2 + 1,
         vx: Math.random() * 0.5 - 0.25,
         vy: Math.random() * 0.5 - 0.25,
-        color: `rgba(${Math.floor(Math.random() * 100 + 155)}, ${Math.floor(
-          Math.random() * 100 + 155,
-        )}, ${Math.floor(Math.random() * 100 + 155)}, 0.7)`,
+        color: `rgba(${Math.floor(Math.random() * 40 + 200)}, ${Math.floor(
+          Math.random() * 70,
+        )}, ${Math.floor(Math.random() * 30)}, 0.45)`,
       })
     }
 

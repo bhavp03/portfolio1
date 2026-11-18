@@ -20,6 +20,26 @@ const config = {
     },
     extend: {
       colors: {
+        // Lumax-inspired red / orange scale. Existing blue and indigo utilities pick this up.
+        blue: {
+          50: "#FFF5F3",
+          100: "#FFE4DE",
+          200: "#FECBBD",
+          300: "#FCA888",
+          400: "#F47A3A",
+          500: "#E84B22",
+          600: "#DB061F",
+          700: "#B8051A",
+          800: "#8E0414",
+          900: "#6E0310",
+          950: "#3D0108",
+        },
+        indigo: {
+          50: "#FFF1E8",
+          100: "#F8E0D0",
+          900: "#6B2418",
+          950: "#3A100C",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

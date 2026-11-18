@@ -20,7 +20,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
+    <div className="min-h-screen bg-gradient-to-b from-[#F6F4F3] to-white dark:from-black dark:to-neutral-950">
       {/* Background Effects */}
       <AnimatedGradientBackground />
       <ParticleBackground />

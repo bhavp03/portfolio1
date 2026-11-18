@@ -47,25 +47,25 @@
 /* Blockquote */
 .ProseMirror blockquote,
 .prose-view blockquote {
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid #db061f;
   margin: 1.5rem 0;
   padding: 0.5rem 0 0.5rem 1.25rem;
   color: #6b7280;
   font-style: italic;
-  background: #eff6ff;
+  background: #fff5f3;
   border-radius: 0 0.5rem 0.5rem 0;
 }
 .dark .ProseMirror blockquote,
 .dark .prose-view blockquote {
-  background: #1e3a5f;
-  color: #93c5fd;
+  background: #3d0108;
+  color: #fca888;
 }
 
 /* Code inline */
 .ProseMirror code,
 .prose-view code {
-  background: #f1f5f9;
-  color: #1e40af;
+  background: #fff5f3;
+  color: #8e0414;
   padding: 0.15em 0.4em;
   border-radius: 0.25rem;
   font-size: 0.875em;
@@ -73,8 +73,8 @@
 }
 .dark .ProseMirror code,
 .dark .prose-view code {
-  background: #1e293b;
-  color: #60a5fa;
+  background: #1a0a0a;
+  color: #f47a3a;
 }
 
 /* Code block */
@@ -113,13 +113,13 @@
 /* Links */
 .ProseMirror a,
 .prose-view a {
-  color: #2563eb;
+  color: #db061f;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 .ProseMirror a:hover,
 .prose-view a:hover {
-  color: #1d4ed8;
+  color: #b8051a;
 }
 
 /* Images */
@@ -202,5 +202,5 @@
 }
 
 .dark .prose-view a {
-  color: #60a5fa !important;
+  color: #f47a3a !important;
 }
