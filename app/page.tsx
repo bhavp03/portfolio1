@@ -45,13 +45,13 @@ export default function Home() {
             <AnimatedSection direction="left" delay={0.2}>
               <div className="space-y-4">
                 <p className="text-lg text-gray-700 dark:text-gray-300">
-                  I&apos;m an EV Enthusiast with a Graduate Degree in Electronics & Communication Engineering. My passion lies in Electrification, Software Intelligence, Thermal Management, Connectivity & Data - The Pillars Shaping Future Mobility.
+                  I&apos;m an Automotive Enthusiast with a Graduate Degree in Electronics & Communication Engineering. My passion lies in Electrification, Software Intelligence, Thermal Management, Telematics and Connectivity & Data - The Pillars Shaping Future Mobility.
                 </p>
                 <p className="text-lg text-gray-700 dark:text-gray-300">
-                  With expertise in Embedded Systems, Signal Processing, IoT, and AI/ML, I specialize in developing vehicle control systems and EV charging solutions that drive innovation in the automotive industry.
+                  Currently a Hardware Engineer at Lumax Ituran Telematics, I test, validate and verify automotive telematics products such as TCUs and RFID systems, ensuring AIS-140 compliance. Previously, I developed vehicle control and EV charging solutions at Dorleco.
                 </p>
                 <p className="text-lg text-gray-700 dark:text-gray-300">
-                  I&apos;m proficient in Python, C/C++, MATLAB Simulink, and STM32 microcontrollers, with hands-on experience in MIL, SIL, and HIL validation for vehicle systems.
+                  I&apos;m proficient in Python, C/C++, MATLAB Simulink, Vector tools and STM32 microcontrollers, with hands-on experience in MIL, SIL, and HIL validation for vehicle systems.
                 </p>
               </div>
             </AnimatedSection>
@@ -62,13 +62,19 @@ export default function Home() {
                 <ul className="space-y-2">
                   <li className="flex items-start group">
                     <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
-                    <span className="text-gray-700 dark:text-gray-300">
-                      Vehicle Control Unit (VCU) Development
-                    </span>
+                    <span className="text-gray-700 dark:text-gray-300">Telematics Control Unit (TCU) Testing & Validation</span>
                   </li>
                   <li className="flex items-start group">
                     <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
-                    <span className="text-gray-700 dark:text-gray-300">EV Charging Systems & Solutions</span>
+                    <span className="text-gray-700 dark:text-gray-300">AIS-140 Compliance & Certification (ARAI, TUV)</span>
+                  </li>
+                  <li className="flex items-start group">
+                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <span className="text-gray-700 dark:text-gray-300">MIL, SIL & HIL Testing</span>
+                  </li>
+                  <li className="flex items-start group">
+                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <span className="text-gray-700 dark:text-gray-300">Vehicle Control Unit (VCU) Development</span>
                   </li>
                   <li className="flex items-start group">
                     <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
@@ -76,7 +82,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start group">
                     <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
-                    <span className="text-gray-700 dark:text-gray-300">Signal Processing & AI/ML</span>
+                    <span className="text-gray-700 dark:text-gray-300">EV Charging Systems & Solutions</span>
                   </li>
                   <li className="flex items-start group">
                     <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
@@ -97,6 +103,35 @@ export default function Home() {
           </AnimatedSection>
 
           <div className="space-y-8">
+            <AnimatedSection delay={0.1}>
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 sm:p-6 border-l-4 border-blue-600 hover:-translate-y-1 transition-transform duration-300">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
+                  <div className="flex items-center gap-4 mb-2 md:mb-0">
+                    <div className="w-14 h-14 rounded-lg bg-white flex items-center justify-center shrink-0 shadow-sm border border-gray-100 overflow-hidden">
+                      <img src="/images/lumax.png" alt="Lumax Logo" className="w-full h-full object-contain p-1.5" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Hardware Engineer</h3>
+                      <p className="text-blue-900 dark:text-white font-medium">Lumax Ituran Telematics Pvt. Ltd. - Pune, India</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400">Oct 2026 - Present</p>
+                </div>
+                <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                  <li>
+                    Responsible for testing, validation, and verification of automotive telematics products, including Telematics Control Units (TCUs), RFID systems, and other electronic devices.
+                  </li>
+                  <li>
+                    Ensuring product compliance with AIS-140 standards & CDAC protocols, including coordination with testing and certification agencies such as ARAI and TUV.
+                  </li>
+                  <li>Conducting MIL, SIL, and HIL testing for in-house product validation at the Lumax facility.</li>
+                  <li>
+                    Performing functional, performance, and reliability testing to ensure product quality, regulatory compliance, and production readiness.
+                  </li>
+                </ul>
+              </div>
+            </AnimatedSection>
+
             <AnimatedSection delay={0.2}>
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 sm:p-6 border-l-4 border-blue-600 hover:-translate-y-1 transition-transform duration-300">
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
@@ -109,17 +144,17 @@ export default function Home() {
                       <p className="text-blue-900 dark:text-white font-medium">Dorleco Pvt. Ltd. - Pune, India</p>
                     </div>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400">Jun 2025 - Present</p>
+                  <p className="text-gray-600 dark:text-gray-400">Jun 2025 - Oct 2026</p>
                 </div>
                 <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
                   <li>
-                    Delivered end-to-end vehicle & EV charging solutions supporting VCU development & manufacturing, improving system robustness by 25-30% using MATLAB Simulink & Stateflow.
+                    Delivered end-to-end vehicle & EV charging solutions supporting VCU development, from signal inputs to actuator outputs, improving system robustness by 25-30% using MATLAB Simulink & Stateflow.
                   </li>
                   <li>
-                    Developed diagnostics and fault management frameworks, including signal validation and fail-safe strategies, reducing inconsistencies by 30-40%.
+                    Developed diagnostics & fault management frameworks, including signal validation and checks, and fail-safe strategies, reducing inconsistencies by 30-40% and ensuring reliable operation across edge-case scenarios.
                   </li>
                   <li>
-                    Executed MIL, SIL, and HIL validation across development stages, enabling early defect detection and faster issue resolution.
+                    Executed MIL, SIL, and HIL validation across development stages, enabling early defect detection, faster issue resolution, and improving system integration and reliability across vehicle and EV charging systems.
                   </li>
                 </ul>
               </div>
@@ -141,8 +176,8 @@ export default function Home() {
                 </div>
                 <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
                   <li>Designed a compact and energy-efficient off-board charger for E2W.</li>
-                  <li>Worked on an IP67-rated enclosure with an efficient cooling system for safe operation and overheating prevention in outdoor conditions.</li>
-                  <li>Conducted rigorous testing for performance, durability, and regulatory compliance.</li>
+                  <li>Worked on an IP67-rated enclosure with an efficient cooling system for the charger, ensuring safe operation and overheating prevention in outdoor conditions.</li>
+                  <li>Conducted rigorous testing for performance, durability, and regulatory compliance, while preparing detailed documentation for transparency and future improvements.</li>
                 </ul>
               </div>
             </AnimatedSection>
@@ -370,19 +405,19 @@ export default function Home() {
                       Embedded Systems
                     </Badge>
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                      Signal Processing
+                      MIL/SIL/HIL Testing
                     </Badge>
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
                       IoT
                     </Badge>
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                      AI & ML
+                      Telematics
                     </Badge>
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
                       EV Charging
                     </Badge>
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                      Software Intelligence
+                      Connected Vehicle Technology
                     </Badge>
                   </div>
                 </CardContent>
@@ -452,6 +487,9 @@ export default function Home() {
                     </Badge>
                     <Badge variant="secondary" className="justify-center py-2 hover:bg-green-100 dark:hover:bg-green-900/50 transition-colors">
                       Altium Designer
+                    </Badge>
+                    <Badge variant="secondary" className="justify-center py-2 hover:bg-green-100 dark:hover:bg-green-900/50 transition-colors">
+                      Vector
                     </Badge>
                   </div>
                 </CardContent>
@@ -525,14 +563,15 @@ export default function Home() {
                     <p className="text-blue-900 dark:text-white">
                       Shiv Nadar Insitute of Eminence
                     </p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">CGPA: 6.52/10</p>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 mt-2 md:mt-0">2021 - 2025</p>
+                  <p className="text-gray-600 dark:text-gray-400 mt-2 md:mt-0">Aug 2021 - Aug 2025</p>
                 </div>
                 <div>
                   <h5 className="font-medium mb-2">Highlights & Courses:</h5>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary" className="animate-pulse flex items-center justify-center">
-                      Specialization in E-Mobility
+                      Specialization in E-Mobility by MG Motors
                     </Badge>
                     <Badge variant="secondary" className="flex items-center justify-center">Connected Car Technology</Badge>
                     <Badge variant="secondary" className="flex items-center justify-center">Electric Vehicle Technology</Badge>
@@ -548,7 +587,7 @@ export default function Home() {
                       Suncity School
                     </p>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 mt-2 md:mt-0">2017 - 2021</p>
+                  <p className="text-gray-600 dark:text-gray-400 mt-2 md:mt-0">Apr 2017 - Apr 2021</p>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400">CBSE Class 12: 83%</p>
               </div>

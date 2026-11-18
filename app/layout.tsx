@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Bhavya Puri",
   description:
-    "Portfolio of Bhavya Puri, Vehicle Controls Engineer specializing in Embedded Systems, Signal Processing, IoT, and AI/ML",
+    "Portfolio of Bhavya Puri, Hardware Engineer specializing in Automotive Telematics, Embedded Systems, MIL/SIL/HIL Testing, IoT and EV Charging",
   generator: "v0.dev",
   icons: {
     icon: [

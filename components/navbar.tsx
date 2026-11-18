@@ -93,7 +93,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              <Link href="https://drive.google.com/file/d/1taL3AxgR8ZW_uVliyqkjjMIpj6beJSJz/view?usp=sharing" target="_blank">
+              <Link href="https://drive.google.com/file/d/1n-CeKzpqSQCXUOb7bkjvCe_KrqEncYk8/view?usp=sharing" target="_blank">
                 <Button variant="outline" size="sm" className="relative overflow-hidden group">
                   <span className="relative z-10">Download Resume</span>
                   <span className="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
@@ -152,7 +152,7 @@ export function Navbar() {
               ))}
               <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
                 <Link
-                  href="https://drive.google.com/file/d/1taL3AxgR8ZW_uVliyqkjjMIpj6beJSJz/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1n-CeKzpqSQCXUOb7bkjvCe_KrqEncYk8/view?usp=sharing"
                   target="_blank"
                   className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-900 dark:hover:text-white transition-colors"
                   onClick={() => setIsOpen(false)}
