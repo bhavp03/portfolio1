@@ -34,6 +34,20 @@ const config = {
           900: "#6E0310",
           950: "#3D0108",
         },
+        // Neutral grays so dark mode matches the light theme instead of Tailwind's blue-tinted gray.
+        gray: {
+          50: "#FAFAFA",
+          100: "#F5F5F5",
+          200: "#E5E5E5",
+          300: "#D4D4D4",
+          400: "#A3A3A3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+          950: "#0A0A0A",
+        },
         indigo: {
           50: "#FFF1E8",
           100: "#F8E0D0",
