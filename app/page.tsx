@@ -181,28 +181,6 @@ export default function Home() {
                 </ul>
               </div>
             </AnimatedSection>
-
-            <AnimatedSection delay={0.4}>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 sm:p-6 border-l-4 border-blue-600 hover:-translate-y-1 transition-transform duration-300">
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
-                  <div className="flex items-center gap-4 mb-2 md:mb-0">
-                    <div className="w-14 h-14 rounded-lg bg-white flex items-center justify-center shrink-0 shadow-sm border border-gray-100 overflow-hidden">
-                      <img src="https://www.google.com/s2/favicons?domain=napino.com&sz=128" alt="Napino Logo" className="w-full h-full object-contain p-1.5" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">Project Trainee</h3>
-                      <p className="text-blue-900 dark:text-white font-medium">Napino Auto & Electronics Ltd. - Gurgaon, India</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-400">Jun 2024 - Jul 2024</p>
-                </div>
-                <ul className="space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
-                  <li>Gained invaluable experience in PCB manufacturing, assembly, and practical applications.</li>
-                  <li>Enhanced skills in microcontrollers through hands-on experience with Hero MotoCorp and Ola Electric.</li>
-                  <li>Explored latest advancements in embedded systems technology.</li>
-                </ul>
-              </div>
-            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -563,7 +541,6 @@ export default function Home() {
                     <p className="text-blue-900 dark:text-white">
                       Shiv Nadar Insitute of Eminence
                     </p>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">CGPA: 6.52/10</p>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 mt-2 md:mt-0">Aug 2021 - Aug 2025</p>
                 </div>
