@@ -56,7 +56,7 @@ export function Navbar() {
           >
             <Link
               href="/"
-              className="text-xl font-bold text-blue-900 dark:text-white"
+              className="text-xl font-bold text-blue-900 dark:text-red-400"
             >
               Bhavya Puri
             </Link>
@@ -79,7 +79,7 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className="px-3 py-2 text-sm font-medium hover:text-blue-900 dark:hover:text-white transition-colors relative group"
+                    className="px-3 py-2 text-sm font-medium hover:text-blue-900 dark:hover:text-red-400 transition-colors relative group"
                   >
                     {link.name}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-800 group-hover:w-full transition-all duration-300"></span>
@@ -113,7 +113,7 @@ export function Navbar() {
             <ThemeToggle />
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:text-blue-900 dark:hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:text-blue-900 dark:hover:text-red-400 focus:outline-none"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -143,7 +143,7 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-900 dark:hover:text-white transition-colors"
+                    className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-900 dark:hover:text-red-400 transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}
@@ -154,7 +154,7 @@ export function Navbar() {
                 <Link
                   href="https://drive.google.com/file/d/1n-CeKzpqSQCXUOb7bkjvCe_KrqEncYk8/view?usp=sharing"
                   target="_blank"
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-900 dark:hover:text-white transition-colors"
+                  className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-900 dark:hover:text-red-400 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Download Resume

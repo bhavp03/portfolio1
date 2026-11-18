@@ -61,31 +61,31 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-4">Key Expertise</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start group">
-                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-red-400 mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
                     <span className="text-gray-700 dark:text-gray-300">Telematics Control Unit (TCU) Testing & Validation</span>
                   </li>
                   <li className="flex items-start group">
-                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-red-400 mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
                     <span className="text-gray-700 dark:text-gray-300">AIS-140 Compliance & Certification (ARAI, TUV)</span>
                   </li>
                   <li className="flex items-start group">
-                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-red-400 mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
                     <span className="text-gray-700 dark:text-gray-300">MIL, SIL & HIL Testing</span>
                   </li>
                   <li className="flex items-start group">
-                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-red-400 mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
                     <span className="text-gray-700 dark:text-gray-300">Vehicle Control Unit (VCU) Development</span>
                   </li>
                   <li className="flex items-start group">
-                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-red-400 mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
                     <span className="text-gray-700 dark:text-gray-300">MATLAB Simulink & Stateflow</span>
                   </li>
                   <li className="flex items-start group">
-                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-red-400 mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
                     <span className="text-gray-700 dark:text-gray-300">EV Charging Systems & Solutions</span>
                   </li>
                   <li className="flex items-start group">
-                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-white mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <ChevronRight className="w-5 h-5 text-blue-900 dark:text-red-400 mt-0.5 flex-shrink-0 transform group-hover:translate-x-1 transition-transform duration-300" />
                     <span className="text-gray-700 dark:text-gray-300">IoT & Embedded Systems Development</span>
                   </li>
                 </ul>
@@ -112,7 +112,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold">Hardware Engineer</h3>
-                      <p className="text-blue-900 dark:text-white font-medium">Lumax Ituran Telematics Pvt. Ltd. - Pune, India</p>
+                      <p className="text-blue-900 dark:text-red-400 font-medium">Lumax Ituran Telematics Pvt. Ltd. - Pune, India</p>
                     </div>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400">Oct 2026 - Present</p>
@@ -141,7 +141,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold">Vehicle Controls Engineer</h3>
-                      <p className="text-blue-900 dark:text-white font-medium">Dorleco Pvt. Ltd. - Pune, India</p>
+                      <p className="text-blue-900 dark:text-red-400 font-medium">Dorleco Pvt. Ltd. - Pune, India</p>
                     </div>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400">Jun 2025 - Oct 2026</p>
@@ -169,7 +169,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold">Project Trainee</h3>
-                      <p className="text-blue-900 dark:text-white font-medium">Advik Hi-Tech Pvt Ltd. - Pune, India</p>
+                      <p className="text-blue-900 dark:text-red-400 font-medium">Advik Hi-Tech Pvt Ltd. - Pune, India</p>
                     </div>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400">Jan 2025 - May 2025</p>
@@ -372,7 +372,7 @@ export default function Home() {
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <span className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-2">
-                      <span className="text-blue-900 dark:text-white text-sm font-bold">DOM</span>
+                      <span className="text-blue-900 dark:text-red-400 text-sm font-bold">DOM</span>
                     </span>
                     Domains
                   </CardTitle>
@@ -538,7 +538,7 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row justify-between mb-4">
                   <div>
                     <h4 className="text-xl font-semibold">B.Tech in Electronics and Communication Engineering</h4>
-                    <p className="text-blue-900 dark:text-white">
+                    <p className="text-blue-900 dark:text-red-400">
                       Shiv Nadar Insitute of Eminence
                     </p>
                   </div>
@@ -560,7 +560,7 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row justify-between mb-2">
                   <div>
                     <h4 className="text-xl font-semibold">PCM with Computer Science</h4>
-                    <p className="text-blue-900 dark:text-white">
+                    <p className="text-blue-900 dark:text-red-400">
                       Suncity School
                     </p>
                   </div>
@@ -577,15 +577,15 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transition-transform duration-300 md:col-span-2">
                   <h4 className="font-semibold">Introduction to IoT and Digital Transformation</h4>
-                  <p className="text-blue-900 dark:text-white">Cisco Networking Academy</p>
+                  <p className="text-blue-900 dark:text-red-400">Cisco Networking Academy</p>
                 </div>
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transition-transform duration-300">
                   <h4 className="font-semibold">Full Stack Specialization</h4>
-                  <p className="text-blue-900 dark:text-white">Scaler Academy</p>
+                  <p className="text-blue-900 dark:text-red-400">Scaler Academy</p>
                 </div>
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transition-transform duration-300">
                   <h4 className="font-semibold">Level 3</h4>
-                  <p className="text-blue-900 dark:text-white">Code-venture by D.Y Patil University</p>
+                  <p className="text-blue-900 dark:text-red-400">Code-venture by D.Y Patil University</p>
                 </div>
               </div>
 
@@ -626,41 +626,41 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-center hover:translate-x-1 transition-transform duration-300">
-                    <Mail className="w-5 h-5 text-blue-900 dark:text-white mr-3" />
+                    <Mail className="w-5 h-5 text-blue-900 dark:text-red-400 mr-3" />
                     <a
                       href="mailto:bhavyapuri@outlook.com"
-                      className="text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-white transition-colors"
+                      className="text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-red-400 transition-colors"
                     >
                       bhavyapuri@outlook.com
                     </a>
                   </div>
                   <div className="flex items-center hover:translate-x-1 transition-transform duration-300">
-                    <Linkedin className="w-5 h-5 text-blue-900 dark:text-white mr-3" />
+                    <Linkedin className="w-5 h-5 text-blue-900 dark:text-red-400 mr-3" />
                     <a
                       href="https://www.linkedin.com/in/bhavyapuri/"
                       target="_blank"
-                      className="text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-white transition-colors"
+                      className="text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-red-400 transition-colors"
                       rel="noreferrer"
                     >
                       LinkedIn Profile
                     </a>
                   </div>
                   <div className="flex items-center hover:translate-x-1 transition-transform duration-300">
-                    <Github className="w-5 h-5 text-blue-900 dark:text-white mr-3" />
+                    <Github className="w-5 h-5 text-blue-900 dark:text-red-400 mr-3" />
                     <a
                       href="https://github.com/bhavp03"
                       target="_blank"
-                      className="text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-white transition-colors"
+                      className="text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-red-400 transition-colors"
                       rel="noreferrer"
                     >
                       GitHub Profile
                     </a>
                   </div>
                   <div className="flex items-center hover:translate-x-1 transition-transform duration-300">
-                    <Phone className="w-5 h-5 text-blue-900 dark:text-white mr-3" />
+                    <Phone className="w-5 h-5 text-blue-900 dark:text-red-400 mr-3" />
                     <a
                       href="tel:+919810928739"
-                      className="text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-white transition-colors"
+                      className="text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-red-400 transition-colors"
                     >
                       +91 9810928739
                     </a>
