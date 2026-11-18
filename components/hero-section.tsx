@@ -14,11 +14,6 @@ export function HeroSection() {
           <div className="w-full md:w-3/5 space-y-6 text-center md:text-left">
             <div>
               <AnimatedText text="Bhavya Puri" className="text-4xl md:text-5xl font-bold tracking-tight" />
-              <AnimatedText
-                text="Vehicle Controls Engineer"
-                className="text-2xl md:text-3xl font-semibold mt-2 text-blue-900 dark:text-white"
-                once={true}
-              />
             </div>
             <ClientMotion
               className="text-lg text-gray-600 dark:text-gray-300"
@@ -26,7 +21,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              EV Enthusiast with expertise in Embedded Systems, Signal Processing, IoT, and AI/ML. Passionate about Electrification, Software Intelligence, and Future Mobility.
+              Automotive Enthusiast with expertise in Embedded Systems, MIL/SIL/HIL Testing, IoT and Telematics. Passionate about Electrification, Software Intelligence, Connectivity and Future Mobility.
             </ClientMotion>
             <ClientMotion
               className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4"
@@ -56,7 +51,7 @@ export function HeroSection() {
                 </Link>
               </Button>
               <Button variant="secondary" asChild className="relative overflow-hidden group whitespace-nowrap">
-                <Link href="https://drive.google.com/file/d/1taL3AxgR8ZW_uVliyqkjjMIpj6beJSJz/view?usp=sharing" target="_blank">
+                <Link href="https://drive.google.com/file/d/1n-CeKzpqSQCXUOb7bkjvCe_KrqEncYk8/view?usp=sharing" target="_blank">
                   <Download className="w-4 h-4 mr-2" />
                   <span className="relative z-10">Resume</span>
                   <span className="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
