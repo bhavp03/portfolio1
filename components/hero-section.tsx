@@ -14,11 +14,6 @@ export function HeroSection() {
           <div className="w-full md:w-3/5 space-y-6 text-center md:text-left">
             <div>
               <AnimatedText text="Bhavya Puri" className="text-4xl md:text-5xl font-bold tracking-tight" />
-              <AnimatedText
-                text="Hardware Engineer"
-                className="text-2xl md:text-3xl font-semibold mt-2 text-blue-900 dark:text-white"
-                once={true}
-              />
             </div>
             <ClientMotion
               className="text-lg text-gray-600 dark:text-gray-300"
